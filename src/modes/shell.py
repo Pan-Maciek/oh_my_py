@@ -1,10 +1,10 @@
 import os
 import sys
 
-color = "\u001b[31m"
-prompt = f"{color}shell> \u001b[0m"
+prompt = (5, "shell> ")
 
 
-def eval(user_input):
-    sys.stdout.write("\n")
+def eval(user_input, stdscr):
+    stdscr.addch("\n")
+    stdscr.refresh()
     os.system(user_input)
